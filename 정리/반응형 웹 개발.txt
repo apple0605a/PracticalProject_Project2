@@ -1,0 +1,59 @@
+Responsive, 반응형
+ - 다양한 디바이스에서 다 최적화되는 페이지
+ - HTML, CSS만 있으면 됨 (JS 불필요)
+ - 웹 페이지를 디바이스 화면 크기에 맞춰 적합한 정보만 표시할 수 있도록 스타일 설정
+ - resize, hide, shrink, enlarge, move
+
+
+
+Viewport 설정
+Viewport : 디바이스의 화면에서 보여지는 영역
+
+<head>
+	<meta name='viewport' content="width=device-width, initial-scale=1.0">
+		/*
+		width=device-width : 현재 페이지 너비를 디바이스 화면 크기에 맞춤
+		initial-scale=1.0 : 브라우저가 페이지 로딩했을 때 처음 화면 비율
+		*/
+~~~`
+
+
+
+
+Grid-View
+가상 구분선
+box-sizing: border-box
+	(box 테두리는 border, 밖은 margin, 안쪽은 padding)
+=> 크기 달라질 때 padding 늘리고 나머지 유지하면 ~~~
+relative positioning - 크기 사용 시 비율 사용
+
+
+
+Media Queries
+@??? rule
+ - 특정 규칙으로 스타일 정함
+ - 종류 @media, @import, @font-face, @key-frames, @charset, ~
+Media query
+ - 특정 조건 만족 시 적용되는 @media rule 사용
+Media Features
+ max-width, max-height : 디바이스 화면(브라우저) 너비, 높이 최대치
+ min-width, min-height : 디바이스 화면(브라우저) 너비, 높이 최소치
+ max-color, max-color-index : 디바이스의 표현 가능 최대 컬러 비트 수, 최대 컬러 수
+ orientation : 화면(viewport) 표시 방향 (landscape, portrait)
+ max-aspect-ratio, min-aspect-ratio : 화면의 가로:세로 비율 최대치, 최소치
+ resolution : 출력 디바이스의 해상도 (dpi, dpcm)
+
+
+Image
+ Image resizing : 화면에 뜨는 이미지 크기 화면 크기 따라 조정되도록 설정
+	max-width: 100%;
+ Backgorund Images
+	background_size: contain;
+	(contain - 특정 영역 안에 배경 포함(크기 유지), 100% 100% - 꽉 채움, cover - 이미지 덮음(잘려도 비율 유지))
+ Different Image for Different Devices
+	@media only screen and (min-width: 400px) {
+		body {
+			backgorund-image: url('img.jpg');
+		}
+	(해상도 다를 때 이미지 변경)
+	

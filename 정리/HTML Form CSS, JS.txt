@@ -1,0 +1,77 @@
+CSS Forms
+
+border:none		- 선 색, none이면 선 없음
+border-radius : 10px	- 꼭짓점 둥글게
+border-bottom:4px solid blue	 - 하단에만 선
+background-color:skyblue	- 배경색
+transition: width 0.4s ease-in-out	- 애니메이션 (가로 0.4초동안 focus에서 가리키는 만큼 늘거나 줄음?)
+
+______________________________________________________________________________________
+
+JavaScript
+ - interpreter 언어, 웹 브라우저에 의해 해석 및 실행
+ - 타입 無, 객채 지향 및 함수 프로그래밍 모두 가능
+ - 다른 페이지 이동 및 HTML 엘리먼트 콘텐츠의 추가, 제거
+ - HTML 엘리먼트 스타일 변경
+ - 폼 유효성 검증
+ - 사용자 상호작용(ex. 마우스, 키보드)에 대한 스크립트 실행
+ - 웹 브라우저 제어, 쿠키 등의 설정과 조회
+ - AJAX 기술 이용한 웹 서버와의 통신
+ - 동적인 효과 이미지 롤오버 상태표시줄에 문자열 표시 등등
+<script> 태그 사용
+
+
+
+JavaScript Forms 1
+<form>
+	~~
+	<button onclick='add()' type='button'> = </button>	- add() 함수를 javascript로 만들어놓음
+	<int type='text' size=2 name='result' id=result' readonly>	- readonly - 사용자는 여기에 값 입력 불가능
+	~~
+</form>
+
+<script>
+	function add() {
+		var num1 = 'document.getElementById("num1");
+			/*
+			document - 값 가져옴
+			getElementById("num1") - id로 element 찾아옴 (element : num1)
+			★ 변수에 할당되는게 데이터 타입 (데이터 타입 따로 無, 변수 앞에 var 붙여주면 됨)
+			*/
+		var num2 = 'document.getElementById("num2");
+
+			/*text 타입의 데이터 - value 속성*/
+		var sum = parseInt(num1.value) + parseInt(num2.value);
+			/*
+			num1.value - num1의 value(text)값 가져옴 (타입 text로 가져옴)
+			parseInt() - int로 변환
+			sum에 num1과 num2의 value값 더한 결과 저장
+			*/
+		
+		var result = document.getElemntById("result");
+		result.value = sum;
+	
+<script>
+
+
+
+JavaScript Events
+<elment명 event명='javascript codes(or function)'/>
+
+event 종류
+ - onchange : 현재 요소 내용 변경 이벤트
+ - onclick : 엘리먼트 클릭 이벤트
+ - onmouseover : 엘리먼트 위에 마우스 올려질 때
+ - onmouseout : 마우스가 엘리먼트 위에 있다가 다른 곳으로 이동할 때
+ - onkeydown : 키보드 입력할 때
+ - onload : 웹페이지 로딩이 완료될 때
+
+
+
+JS Form Validation - 사용자가 입력한 데이터가 기준 충족하는지 확인
+<form ~ onsubmit="return validateForm()" ~> 	- validateForm 리턴값 True면 데이터 전송 (False면 전송 중지)
+
+
+
+전송 데이터 처리
+23:04 ~ 27:16
