@@ -4,20 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="my.css">
+    <!-- <script type="text/javascript" src="hi.js"></script> 이거 안돼서 단어 저장이나 수정도 구현 안됨 -->
+    <script>
+     
+     window.onload = function() {
+          showList();
+      };
+  
+    let wordList = [
+      {
+          "word": "apple",
+          "meaning": "사과",
+          "level": 1
+      },
+      {
+          "word": "banana",
+          "meaning": "바나나",
+          "level": 1
+      },
+      {
+          "word": "peach",
+          "meaning": "복숭아",
+          "level": 2
+      },
+      {
+          "word": "watermelon",
+          "meaning": "수박",
+          "level": 3
+      }
+  ]
+
+  function showList() {
+    let wordListContainer = document.getElementById('wordListContainer');
+    for (let i = 0; i < wordList.length; ++i) {
+        const wordItem = document.createElement('div');
+        wordItem.classList.add('word');
+        //<a class="word" herf="view.html"></a>
+        wordItem.innerText = (i + 1) + ' ' + wordList[i].word + ' ' + wordList[i].meaning + ' (난이도: ' + wordList[i].level +')';
+        // wordItem.innerText = <a text="view" herf="view.html"> </a>;
+        wordListContainer.appendChild(wordItem);
+    }
+}
+  </script>
+  <!-- <style>
+    h1 {text-align: center}
+  </style> -->
     <title>Document</title>
     <h1>영어 단어장</h1>
 </head>
 <body>
-    <!-- HTML 내용은 그대로 유지 -->
+
+  <div id="wordListContainer"></div>
+
+
   <div class="button-container">
     <a class="button" href="add.html">Add</a>
+    <a class="button" href="view.html">View</a> <!--단어별로 js 넣어서 지정 필요함, 지금 하질 못함-->
   </div>
-
-  <div class="row mb-3">
-    <div class="col-4 themed-grid-col">.col-4</div>
-    <div class="col-4 themed-grid-col">.col-4</div>
-    <div class="col-4 themed-grid-col">.col-4</div>
-  </div>
+  
 
 </body>
 </html>

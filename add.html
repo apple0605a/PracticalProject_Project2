@@ -6,10 +6,11 @@
     <link rel="stylesheet" type="text/css" href="my.css">
     <title>Document</title>
     <h1>Add</h1>
+    <!-- <script type="text/javascript" src="hi.js"></script> ★ 이거 안됨;; => 실제 추가 불가능-->
+    
 </head>
 <body>
     <form name="inputWord" method="post" action="UserServlet" onSubmit="return Checkform()">
-
         단어 : <input type="text" name="name">
         <br>
         뜻 : <input type="text" name="mean">
@@ -25,25 +26,30 @@
             <input type="radio" id="post3" name="post" value="3"> 3
         </label>
         <br>
-        
-        
-    
     </form>
-
 
     <a  class=button onclick="myFunction()">추가</button>
 
+    <script>
+        function myFunction() {
+            if(Checkform()) {
+                clearForm();
+            }
+        }
 
-  <script>
-    function myFunction() {
-        Checkform();
-    }
+        function clearForm() {
+            document.inputWord.name.value = "";
+            document.inputWord.mean.value = "";
+            document.inputWord.post[0].checked = false;
+            document.inputWord.post[1].checked = false;
+            document.inputWord.post[2].checked = false;
+        }
 
-    function Checkform() {
+        function Checkform() {
             if(inputWord.name.value == "" ) {
                 inputWord.name.focus();
                 alert("단어를 입력하시오.");
-                return false;
+                return false; 
             }
             if(inputWord.mean.value == "" ) {
                 inputWord.mean.focus();
@@ -54,14 +60,13 @@
                 alert("단어 레벨을 선택하시오.");
                 return false;
             }
-            alert("게시물이 추가됩니다");
+            alert("단어가 추가됩니다"); //실제 추가 안됨 (js 파일 연결 안됨)
+            return true;
         } 
     </script>
-
+    
 
 <a class="button" href="index.html">Home</a>
-
-  
 
 </body>
 </html>

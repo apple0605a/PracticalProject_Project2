@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="my.css">
+    <title>Document</title>
+    <h1>Edit</h1>
+</head>
+<body>
+    <form name="inputWord" method="post" action="UserServlet" onSubmit="return Checkform()">
+
+        단어 : <input type="text" name="name">
+        <br>
+        뜻 : <input type="text" name="mean">
+        <br>
+        단어 레벨 :
+        <label for="post1">
+            <input type="radio" id="post1" name="post" value="1"> 1
+        </label>
+        <label for="post2">
+            <input type="radio" id="post2" name="post" value="2"> 2
+        </label>
+        <label for="post2">
+            <input type="radio" id="post3" name="post" value="3"> 3
+        </label>
+        <br>
+        
+        
+    
+    </form>
+
+    <div class="button-container">
+    <a class=button onclick="myFunction()">수정</button>
+    <a class="button" href="view.html">취소</a>
+    <a class="button" href="index.html">Home</a>
+    </div>
+
+
+        <script>
+            function myFunction() {
+                if(Checkform()) {
+                    clearForm();
+                }
+            }
+    
+            function clearForm() {
+                document.inputWord.name.value = "";
+                document.inputWord.mean.value = "";
+                document.inputWord.post[0].checked = false;
+                document.inputWord.post[1].checked = false;
+                document.inputWord.post[2].checked = false;
+            }
+    
+            function Checkform() {
+                if(inputWord.name.value == "" ) {
+                    inputWord.name.focus();
+                    alert("단어를 입력하시오.");
+                    return false; 
+                }
+                if(inputWord.mean.value == "" ) {
+                    inputWord.mean.focus();
+                    alert("뜻을 입력하시오.");
+                    return false;
+                }
+                if((inputWord.post[0].checked == false) && (inputWord.post[1].checked == false) && (inputWord.post[2].checked == false)) {
+                    alert("단어 레벨을 선택하시오.");
+                    return false;
+                }
+                if(confirm("단어가 수정됩니다")) { //실제 수정 안됨 (js 파일 연결이 안됨)
+                    alert("수정 완료"); //안됐어요
+                    return true; 
+                }
+                else {
+                    return false;
+                }
+            } 
+        </script>
+
+
+
+  
+
+</body>
+</html>

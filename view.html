@@ -1,0 +1,48 @@
+<!--1번 단어 눌렀다고 가정-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="my.css">
+    
+    <title>Document</title>
+    <h1>View</h1>
+
+
+</head>
+<body>
+    
+    <div id="wordListContainer">
+        <a class="word">1 apple 사과 (난이도: 1)</a>
+    </div>
+    <pre>
+
+<div class="button-container">
+    <a class="button" href="edit.html">Edit</a>
+    <a class="button" onclick="myFunction()">Delete</a>
+    <a class="button" href="index.html">Home</a>
+  </div>
+
+  <script>
+    function myFunction() {
+        Checkform()
+    }
+
+
+    function Checkform() {
+        if(confirm("단어가 삭제됩니다")) { //실제 수정 안됨 (js 파일 연결이 안됨)
+            alert("삭제 완료"); //안됐어요
+            return true; 
+        }
+        else {
+            return false;
+        }
+    } 
+</script>
+
+
+  
+
+</body>
+</html>
