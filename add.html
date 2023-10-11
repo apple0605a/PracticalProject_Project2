@@ -8,10 +8,58 @@
     <h1>Add</h1>
 </head>
 <body>
-    <!-- HTML 내용은 그대로 유지 -->
-  <div class="button-container">
-    <a class="button" href=#>Add <p onclick="게시물이 추가됩니다"></p></a>
-  </div>
+    <form name="inputWord" method="post" action="UserServlet" onSubmit="return Checkform()">
+
+        단어 : <input type="text" name="name">
+        <br>
+        뜻 : <input type="text" name="mean">
+        <br>
+        단어 레벨 :
+        <label for="post1">
+            <input type="radio" id="post1" name="post" value="1"> 1
+        </label>
+        <label for="post2">
+            <input type="radio" id="post2" name="post" value="2"> 2
+        </label>
+        <label for="post2">
+            <input type="radio" id="post3" name="post" value="3"> 3
+        </label>
+        <br>
+        
+        
+    
+    </form>
+
+
+    <a  class=button onclick="myFunction()">추가</button>
+
+
+  <script>
+    function myFunction() {
+        Checkform();
+    }
+
+    function Checkform() {
+            if(inputWord.name.value == "" ) {
+                inputWord.name.focus();
+                alert("단어를 입력하시오.");
+                return false;
+            }
+            if(inputWord.mean.value == "" ) {
+                inputWord.mean.focus();
+                alert("뜻을 입력하시오.");
+                return false;
+            }
+            if((inputWord.post[0].checked == false) && (inputWord.post[1].checked == false) && (inputWord.post[2].checked == false)) {
+                alert("단어 레벨을 선택하시오.");
+                return false;
+            }
+            alert("게시물이 추가됩니다");
+        } 
+    </script>
+
+
+<a class="button" href="index.html">Home</a>
 
   
 
